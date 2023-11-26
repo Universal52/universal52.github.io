@@ -1,65 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directory: / </title>
+    <title>RealKyle - Main</title>
+    <meta name="og:title" content="Kyle Nigers Site">
+  <meta name="og:image" content="https://files.jcmainclr.xyz/uploads/g12u8.PNG">
+  <meta content="Kyle real site (neggers)" property="og:description">
+  <link rel="icon" href="https://files.jcmainclr.xyz/uploads/g12u8.PNG">
 </head>
 <body>
-
-    <h1 class="lol">Directory: /</h1>
-    <a href="/">🏠</a> 
-    <input type="text" id="searchInput" placeholder="Type to search" class="search">
-    <ul id="fileList"></ul>
-
-    <script>
-        // Fetch the file list from GitHub API
-        fetch('https://api.github.com/repos/Jcnob/jcnoob.github.io/contents/')
-            .then(response => response.json())
-            .then(data => {
-                const fileList = document.getElementById('fileList');
-                const searchInput = document.getElementById('searchInput');
-
-                // Function to filter files based on user input
-                const filterFiles = () => {
-                    const searchTerm = searchInput.value.toLowerCase();
-
-                    fileList.innerHTML = ''; // Clear the previous list
-
-                    data.forEach(item => {
-                        const itemName = item.name.toLowerCase();
-
-                        if (item.type === 'file' && itemName.includes(searchTerm)) {
-                            const listItem = document.createElement('div');
-                            const link = document.createElement('a');
-                            link.href = `https://files.jcmainclr.xyz/${item.name}`;
-                            link.textContent = item.name;
-                            listItem.appendChild(link);
-                            fileList.appendChild(listItem);
-                        } else if (item.type === 'dir' && itemName.includes(searchTerm)) {
-                            const listItem = document.createElement('div');
-                            const link = document.createElement('a');
-                            link.href = `https://files.jcmainclr.xyz/${item.name}`;
-                            link.textContent = item.name + '/';
-                            listItem.appendChild(link);
-                            fileList.appendChild(listItem);
-                        }
-
-                    });
-                };
-                filterFiles();
-                searchInput.addEventListener('input', filterFiles);
-            })
-            .catch(error => console.error('Error fetching file list:', error));
-    </script>
+<section class="hidden">
+    <br><br>    <br><br>   
+    <h1>Kyle uhh random uhh site yeah</h1>
+    <div class="manke">
+        <h1>Ipon list real:</h1>
+        <img src="/assets/canon_eos_3000d.jpg" width="200"> <p>Canon Eos 3000D</p>
+        <img src="/assets/fixie.jpg" width="200"><p>Fixie</p>
+        <img src="/assets/fixie2.jpg" width="200"><p>Fixie2</p>
+        <img src="/assets/rel.png" width="200"><p>OEM Cer Popular S5 Full Carbon Chameleon Road Frame V-Brake Frameset</p>
+        <img src="/assets/apple-iphone-11.jpg" width="200"><p>Iphone 11 </p>
+        <img src="/assets/jbl.jpg" width="200"><p>JBL Pulse 5 Portable Bluetooth Speaker With Light Show</p>
+        <img src="/assets/ye.jpg" width="200"><p>Maserati Sfida 44mm Black Silicon Men's Quartz Chronograph Watch Relo R8871640001 With Luminous Dial Hands</p>
+    </div>
+</section>
 </body>
-</html>
 <style>
+    section{
+        align-items: center;
+        text-align: center;
+
+    }
+    .manke{
+        border: 3px solid #FFF;
+    }
+    .hidden{
+        opacity: 0;
+        transition: all 1s;
+        transform: translateY(-100%);
+        filter: blur(10px);
+    }
+    .show{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
     body{
-        background-color: #2E3440;
+        background-color: #111;
         color: #fff;
         font-family: 'Roboto',sans-serif;
     }
-    a{color: #fff; font-size: 20px; transition: ease-in 0.3s; } a:hover{color:aquamarine;}
-    .search{border-radius: 5px; font-size: 20px;} 
 </style>
+ <script>
+let oberv = new IntersectionObserver((entires) => {
+    entires.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }else{
+            entry.target.classList.remove('show')
+        }
+    })
+})
+let hidden = document.querySelectorAll('.hidden')
+hidden.forEach((el) =>  oberv.observe(el))
+</script>
